@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/listAbjadFragment">
+
+    <fragment
+        android:id="@+id/listAbjadFragment"
+        android:name="com.example.challengechaptertigaa.ListAbjadFragment"
+        android:label="fragment_list_abjad"
+        tools:layout="@layout/fragment_list_abjad" >
+        <action
+            android:id="@+id/action_listAbjadFragment_to_listKataFragment"
+            app:destination="@id/listKataFragment" />
+        <argument
+            android:name="abjad"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/listKataFragment"
+        android:name="com.example.challengechaptertigaa.ListKataFragment"
+        android:label="fragment_list_kata"
+        tools:layout="@layout/fragment_list_kata" >
+        <argument
+            android:name="abjad"
+            app:argType="string"
+            android:defaultValue="abjad" />
+    </fragment>
+</navigation>
