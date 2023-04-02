@@ -1,9 +1,6 @@
 package com.example.challengechaptertigaa
 
-
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,13 +33,39 @@ class ListAbjadFragment : Fragment(), AbjadAdapter.OnItemClickListener {
 
     }
     override fun onKataItemClick(kata: String) {
-        Log.d(TAG, "Kata '$kata' di-klik")
+
     }
 
     private fun generateAbjadList(): List<ListAbjad> {
         val list = mutableListOf<ListAbjad>()
         // ganti dengan logika untuk menghasilkan daftar abjad
-        list.addAll(listOf(ListAbjad("A"), ListAbjad("B"), ListAbjad("C")))
+        list.addAll(listOf(ListAbjad("A"),
+            ListAbjad("B"),
+            ListAbjad("C"),
+            ListAbjad("D"),
+            ListAbjad("E"),
+            ListAbjad("F"),
+            ListAbjad("G"),
+            ListAbjad("H"),
+            ListAbjad("I"),
+            ListAbjad("J"),
+            ListAbjad("K"),
+            ListAbjad("L"),
+            ListAbjad("M"),
+            ListAbjad("N"),
+            ListAbjad("O"),
+            ListAbjad("P"),
+            ListAbjad("Q"),
+            ListAbjad("R"),
+            ListAbjad("S"),
+            ListAbjad("T"),
+            ListAbjad("U"),
+            ListAbjad("V"),
+            ListAbjad("W"),
+            ListAbjad("X"),
+            ListAbjad("Y"),
+            ListAbjad("Z")
+        ))
         return list
     }
 
