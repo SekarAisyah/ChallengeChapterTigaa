@@ -6,28 +6,21 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class HurufAdapter(private val hurufList: List<ListHuruf>, private val listener: OnItemClickListener) :
+class HurufAdapter(private val hurufList: List<Char>, private val listener: OnItemClickListener) :
     RecyclerView.Adapter<HurufAdapter.ViewHolder>() {
 
     interface OnItemClickListener {
-        fun onItemClick(huruf: String)
+        fun onItemClick(huruf: Char)
     }
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
-        private val textViewAbjad: TextView = itemView.findViewById(R.id.txtAbjad)
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val txtAbjad: TextView = itemView.findViewById(R.id.txtAbjad)
 
-        init {
-            itemView.setOnClickListener(this)
-        }
+        fun bind(huruf: Char) {
+            txtAbjad.text = huruf.toString()
 
-        fun bind(huruf: ListHuruf) {
-            textViewAbjad.text = huruf.huruf
-        }
-
-        override fun onClick(v: View?) {
-            val position = absoluteAdapterPosition
-            if (position != RecyclerView.NO_POSITION) {
-                listener.onItemClick(hurufList[position].huruf)
+            itemView.setOnClickListener {
+                listener.onItemClick(huruf)
             }
         }
     }
@@ -44,4 +37,6 @@ class HurufAdapter(private val hurufList: List<ListHuruf>, private val listener:
     override fun getItemCount(): Int {
         return hurufList.size
     }
+
+
 }

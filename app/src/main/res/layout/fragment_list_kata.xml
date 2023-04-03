@@ -6,6 +6,7 @@
     android:orientation="vertical"
     tools:context=".ListKataFragment">
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_kataa"
         android:layout_width="match_parent"

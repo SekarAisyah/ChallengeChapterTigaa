@@ -1,3 +1,3 @@
 package com.example.challengechaptertigaa
 
-data class ListHuruf (var huruf:String)
+data class ListHuruf (var huruf:Char)
